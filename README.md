@@ -30,8 +30,10 @@ The package could also be downloaded directly from:
 
 ## More information
 
-For CAL to Estrangela conversion see:
-[cal-estrangela](https://github.com/peshitta/cal-estrangela)
+Note: Eastern Estrangela font has no support for standalone **i** and **u**
+vowels, without supporting **y** or **w** respectively. `toCal`
+conversion may not have those vowels, even if the word had them originally.
+E.g. u in `metul`, words imported from Greek like `Caesarea`, etc.
 
 [Peshitta App](https://peshitta.github.io)
 
@@ -41,10 +43,8 @@ For CAL to Estrangela conversion see:
 
 [CAL](http://cal1.cn.huc.edu/searching/fullbrowser.html)
 
-Note: Eastern Estrangela font has no support for standalone **i** and **u**
-vowels, without supporting **y** or **w** respectively. `toCal`
-conversion may not have those vowels, even if the word had them originally.
-E.g. u in `metul`, words imported from Greek like `Caesarea`, etc.
+For CAL to Estrangela conversion see:
+[cal-estrangela](https://github.com/peshitta/cal-estrangela)
 
 ## License
 

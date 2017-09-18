@@ -2,12 +2,9 @@
 
 import { Writing, Mapper } from 'aramaic-mapper';
 import {
-  baseConsonants,
-  finalConnected,
-  finalNonConnected,
+  allConsonants,
   ligatures,
-  baseVowels,
-  shiftedVowels,
+  allVowels,
   commonDiacritics,
   shiftedDiacritics,
   isConsonant
@@ -15,46 +12,51 @@ import {
 import { consonants, vowels, diacritics } from 'cal-code-util';
 
 /**
+ * @private
  * Estrangela Writing Definition
+ * @const
+ * @type { Writing }
  */
-export const estrangelaWriting = new Writing(
-  baseConsonants
-    .concat(finalConnected)
-    .concat(finalNonConnected)
-    .concat(ligatures),
-  baseVowels.concat(shiftedVowels),
-  commonDiacritics.concat(shiftedDiacritics)
+const estrangelaWriting = new Writing(
+  allConsonants,
+  allVowels,
+  Object.freeze(commonDiacritics.concat(shiftedDiacritics))
 );
 
 /**
+ * @private
  * Mapped Cal Writing Definition
+ * @const
+ * @type { Writing }
  */
-export const calWriting = new Writing(
-  consonants
-    .concat([
-      'b',
-      'g',
+const calWriting = new Writing(
+  Object.freeze(
+    consonants
+      .concat([
+        'b',
+        'g',
 
-      'x',
-      'T',
-      'y',
+        'x',
+        'T',
+        'y',
 
-      'k',
-      'l',
-      'm',
-      'n',
+        'k',
+        'l',
+        'm',
+        'n',
 
-      's',
-      '(',
-      'p',
+        's',
+        '(',
+        'p',
 
-      'q',
-      '$'
-    ])
-    .concat(['k', 'n'])
-    .concat(['l', 't']),
-  vowels.slice(0, 4).concat(['E', 'O', 'a', 'o', 'e', 'E']),
-  diacritics.concat([',', '_', '*'])
+        'q',
+        '$'
+      ])
+      .concat(['k', 'n'])
+      .concat(['l', 't'])
+  ),
+  Object.freeze(vowels.slice(0, 4).concat(['E', 'O', 'a', 'o', 'e', 'E'])),
+  Object.freeze(diacritics.concat([',', '_', '*']))
 );
 
 /**
@@ -83,10 +85,16 @@ const mapCallback = (word, i, toFrom) => {
 };
 
 /**
+ * Aramaic mapper
+ * @const
+ * @type { Mapper }
+ */
+export const mapper = new Mapper(estrangelaWriting, calWriting, mapCallback);
+
+/**
  * Convert from Estrangela ASCII font to CAL coding
  * @static
  * @param {string} word input word in Estrangela ASCII font
  * @returns {string} the input word converted to CAL code
  */
-export const toCal = word =>
-  new Mapper(estrangelaWriting, calWriting, mapCallback).map(word);
+export const toCal = word => mapper.map(word);

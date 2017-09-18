@@ -96,32 +96,35 @@ describe('Estrangela', () => {
   describe('Mapped writing', () => {
     it('Consonants length', () => {
       test.strictEqual(
-        sut.estrangelaWriting.consonants.length,
-        sut.calWriting.consonants.length,
+        sut.mapper.fromWriting.consonants.length,
+        sut.mapper.toWriting.consonants.length,
         'Length differs'
       );
       test.ok(
-        sut.estrangelaWriting.consonants.length > 22,
+        sut.mapper.fromWriting.consonants.length > 22,
         'Length greater than 22'
       );
     });
     it('Vowels length', () => {
       test.strictEqual(
-        sut.estrangelaWriting.vowels.length,
-        sut.calWriting.vowels.length,
-        'Length differs'
-      );
-      test.ok(sut.estrangelaWriting.vowels.length > 5, 'Length greater than 5');
-    });
-    it('Diacritics length', () => {
-      test.strictEqual(
-        sut.estrangelaWriting.diacritics.length,
-        sut.calWriting.diacritics.length,
+        sut.mapper.fromWriting.vowels.length,
+        sut.mapper.toWriting.vowels.length,
         'Length differs'
       );
       test.ok(
-        sut.estrangelaWriting.diacritics.length > 5,
-        'Length greater than 5'
+        sut.mapper.fromWriting.vowels.length === 10,
+        'Length equal to 10'
+      );
+    });
+    it('Diacritics length', () => {
+      test.strictEqual(
+        sut.mapper.fromWriting.diacritics.length,
+        sut.mapper.toWriting.diacritics.length,
+        'Length differs'
+      );
+      test.ok(
+        sut.mapper.fromWriting.diacritics.length === 7,
+        'Length equal to 7'
       );
     });
   });

@@ -7,7 +7,8 @@ import {
   allVowels,
   commonDiacritics,
   shiftedDiacritics,
-  isConsonant
+  isConsonant,
+  isEasternDiacritic
 } from 'estrangela-code-util';
 import { consonants, vowels, diacritics } from 'cal-code-util';
 
@@ -68,13 +69,18 @@ const calWriting = new Writing(
  */
 const mapCallback = (word, i, toFrom) => {
   const c = word.charAt(i);
+  if (isEasternDiacritic(c)) {
+    return '';
+  }
   let m = toFrom[c];
   if (ligatures.indexOf(c) > -1) {
     let sb = '';
     let j = 0;
     let n = word.charAt(i + ++j);
     while (i + j < word.length && !isConsonant(n)) {
-      sb += toFrom[n] || n;
+      if (!isEasternDiacritic(n)) {
+        sb += toFrom[n] || n;
+      }
       n = word.charAt(i + ++j);
     }
     m += `${sb})`;

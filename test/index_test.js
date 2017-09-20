@@ -71,7 +71,18 @@ describe('Estrangela', () => {
       test.strictEqual(sut.toCal('h#F2o'), "h,t'e)", 'F ligature');
       test.strictEqual(sut.toCal('r^ef3E'), 'r*al,a)', 'f ligature');
     });
-
+    it('Non-standalone eastern diacritic vocalized', () => {
+      test.strictEqual(sut.toCal('h#F82o'), "h,t'e)", '1 Eastern diacritic');
+      test.strictEqual(
+        sut.toCal('`r^e1f3E1'),
+        'r*al,a)',
+        '`1 Eastern diacritic'
+      );
+    });
+    it('With un-mapped symbols', () => {
+      test.strictEqual(sut.toCal('Zh#F2o7'), "Zh,t'e7)", 'start/end un-mapped');
+      test.strictEqual(sut.toCal('r^eRf3E'), 'r*aRl,a)', 'inside un-mapped');
+    });
     it('Blank word returns blank', () => {
       const word = sut.toCal('');
       const wordExpected = '';

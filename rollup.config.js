@@ -1,5 +1,4 @@
-import babel from 'rollup-plugin-babel';
-import babelrc from 'babelrc-rollup';
+import buble from 'rollup-plugin-buble';
 import istanbul from 'rollup-plugin-istanbul';
 import uglify from 'rollup-plugin-uglify';
 import pkg from './package.json';
@@ -9,7 +8,7 @@ const isDev = process.env.BUILD === 'dev';
 const banner = isProduction
   ? '/**\n' +
     '* @file Convert from Estrangela ASCII font to CAL code\n' +
-    '* @version 1.0.4\n' +
+    '* @version 1.0.5\n' +
     '* @author Greg Borota\n' +
     '* @copyright (c) 2017 Greg Borota.\n' +
     '* @license MIT\n' +
@@ -44,13 +43,13 @@ const name = 'estrangelaCal';
 const format = 'umd';
 const globals = {
   'aramaic-mapper': 'aramaicMapper',
-  'estrangela-code-util': 'estrangelaCodeUtil',
-  'cal-code-util': 'calCodeUtil'
+  'cal-code-util': 'calCodeUtil',  
+  'estrangela-code-util': 'estrangelaCodeUtil'
 };
 const sourcemap = !isProduction;
-const plugins = [babel(babelrc({ path: 'babelrc.json' }))];
+const plugins = [buble()];
 
-// browser-friendly UMD build
+// browser/nodejs-friendly UMD build
 const targets = [
   {
     input,
@@ -85,10 +84,10 @@ if (isProduction) {
     })
   );
 
-  // browser-friendly minified UMD build
+  // browser/nodejs-friendly minified UMD build
   targets.push({
     input,
-    output: [{ file: pkg.main݂Min, format }],
+    output: [{ file: pkg.mainMin, format }],
     external,
     plugins,
     name,

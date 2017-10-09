@@ -1,5 +1,4 @@
-/** @module estrangela */
-
+/** @module estrangelaCal */
 import { Writing, Mapper } from 'aramaic-mapper';
 import {
   allConsonants,

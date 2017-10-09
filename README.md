@@ -26,7 +26,7 @@ Following bundles are available:
 libraries and applications
 
 The package could also be downloaded directly from:
-[https://registry.npmjs.org/estrangela-cal/-/estrangela-cal-1.0.4.tgz](https://registry.npmjs.org/estrangela-cal/-/estrangela-cal-1.0.4.tgz)
+[https://registry.npmjs.org/estrangela-cal/-/estrangela-cal-1.0.5.tgz](https://registry.npmjs.org/estrangela-cal/-/estrangela-cal-1.0.5.tgz)
 
 ## More information
 
@@ -71,22 +71,22 @@ npm run build
 
 ## API Reference
 
-* [estrangela](#module_estrangela)
-    * [.mapper](#module_estrangela.mapper) : <code>Mapper</code>
-    * [.toCal](#module_estrangela.toCal) ⇒ <code>string</code>
+* [estrangelaCal](#module_estrangelaCal)
+    * [.mapper](#module_estrangelaCal.mapper) : <code>Mapper</code>
+    * [.toCal](#module_estrangelaCal.toCal) ⇒ <code>string</code>
 
-<a name="module_estrangela.mapper"></a>
+<a name="module_estrangelaCal.mapper"></a>
 
-### estrangela.mapper : <code>Mapper</code>
+### estrangelaCal.mapper : <code>Mapper</code>
 Aramaic mapper
 
-**Kind**: static constant of [<code>estrangela</code>](#module_estrangela)  
-<a name="module_estrangela.toCal"></a>
+**Kind**: static constant of [<code>estrangelaCal</code>](#module_estrangelaCal)  
+<a name="module_estrangelaCal.toCal"></a>
 
-### estrangela.toCal ⇒ <code>string</code>
+### estrangelaCal.toCal ⇒ <code>string</code>
 Convert from Estrangela ASCII font to CAL coding
 
-**Kind**: static constant of [<code>estrangela</code>](#module_estrangela)  
+**Kind**: static constant of [<code>estrangelaCal</code>](#module_estrangelaCal)  
 **Returns**: <code>string</code> - the input word converted to CAL code  
 
 | Param | Type | Description |

@@ -1,6 +1,6 @@
 {
   "name": "estrangela-cal",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Convert from Estrangela ASCII font to CAL code",
   "main": "build/estrangela-cal.js",
   "mainMin": "build/estrangela-cal.min.js",
@@ -60,15 +60,15 @@
   },
   "homepage": "https://github.com/peshitta/estrangela-cal#readme",
   "dependencies": {
-    "aramaic-mapper": "^1.0.6",
-    "cal-code-util": "^1.0.7",
-    "estrangela-code-util": "^1.0.7"
+    "aramaic-mapper": "^1.1.3",
+    "cal-code-util": "^1.1.2",
+    "estrangela-code-util": "^1.0.8"
   },
   "devDependencies": {
     "coveralls": "^3.0.0",
-    "eslint": "^4.8.0",
-    "eslint-config-airbnb-base": "^12.0.2",
-    "eslint-plugin-import": "^2.7.0",
+    "eslint": "^4.10.0",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.8.0",
     "istanbul": "^0.4.5",
     "jsdoc-to-markdown": "^3.0.0",
     "mocha": "^4.0.1",

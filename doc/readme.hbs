@@ -26,7 +26,7 @@ Following bundles are available:
 libraries and applications
 
 The package could also be downloaded directly from:
-[https://registry.npmjs.org/estrangela-cal/-/estrangela-cal-1.0.5.tgz](https://registry.npmjs.org/estrangela-cal/-/estrangela-cal-1.0.5.tgz)
+[https://registry.npmjs.org/estrangela-cal/-/estrangela-cal-1.0.6.tgz](https://registry.npmjs.org/estrangela-cal/-/estrangela-cal-1.0.6.tgz)
 
 ## More information
 

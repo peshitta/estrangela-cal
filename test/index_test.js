@@ -62,6 +62,7 @@ describe('Estrangela', () => {
     it('Non-standalone non-vocalized ligature', () => {
       test.strictEqual(sut.toCal('0F'), ')t)', 'F ligature');
       test.strictEqual(sut.toCal('df'), 'dl)', 'f ligature');
+      test.strictEqual(sut.toCal('wf'), 'wl)', 'wf ligature');
     });
     it('Non-standalone vocalized ligature', () => {
       test.strictEqual(sut.toCal('legaFo'), 'lagote)', 'F ligature');
